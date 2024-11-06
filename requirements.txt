@@ -1,0 +1,6 @@
+transformers
+sentence-transformers
+openai-clip
+pinecone-client
+requests
+urllib3
