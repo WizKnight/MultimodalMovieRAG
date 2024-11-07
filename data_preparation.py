@@ -5,7 +5,7 @@ import urllib3
 import re
 import csv
 
-TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
+TMDB_API_KEY = os.environ.get('TMDB_API_KEY')
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
@@ -81,16 +81,20 @@ def download_posters(movies: List[Dict], output_dir: str = "posters"):
 
     for movie in movies:
         if movie['poster_url']:
-            response = requests.get(movie['poster_url'], stream=True)
-            response.raise_for_status()
+            try:
+                response = requests.get(movie['poster_url'], stream=True)
+                response.raise_for_status()
 
-            # Sanitize the filename by removing invalid characters
-            filename = re.sub(r'[\\/:"*?<>|]+', '', movie['title']) + ".jpg"  
-            image_path = os.path.join(output_dir, filename)
+                # Construct the filename using the movie title from the movie data
+                filename = re.sub(r'[\\/:"*?<>|]+', '', movie['title']) + ".jpg"
+                image_path = os.path.join(output_dir, filename)
 
-            with open(image_path, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f.write(chunk)
+                with open(image_path, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        f.write(chunk)
+
+            except requests.exceptions.RequestException as e:
+                print(f"Error downloading poster for {movie['title']}: {e}")
                     
 def save_movie_data_to_csv(movies: List[Dict], output_file: str = "movies.csv"):
     """Saves the processed movie data to a CSV file."""
