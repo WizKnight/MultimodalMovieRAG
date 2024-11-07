@@ -87,4 +87,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## License
 
-This project is licensed under the [Apache-2.0 license]([LICENSE](https://github.com/WizKnight/MultimodalMovieRAG/blob/main/LICENSE))
+This project is licensed under the [Apache-2.0 license](https://github.com/WizKnight/MultimodalMovieRAG/blob/main/LICENSE)
