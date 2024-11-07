@@ -79,7 +79,7 @@ It allows users to search for movies using both text queries and images.
 
 ## Demo Video
 
-[![Multimodal Movie Search Demo](add_link.gif)](https://www.loom.com/)
+[![Multimodal Movie Search Demo](https://cdn.loom.com/sessions/thumbnails/426f55e9dac74c5aa47630ce94767f74-ddac9997e19b462b-full-play.gif)](https://www.loom.com/share/426f55e9dac74c5aa47630ce94767f74?t=60&sid=cf90d183-1f8d-4d80-b8f5-7549aade5878)
 
 ## Contributing
 
