@@ -1,5 +1,6 @@
 import csv
 import os
+from dotenv import load_dotenv
 from typing import List, Dict
 import unicodedata
 import re
@@ -7,6 +8,8 @@ import re
 import pinecone
 
 from embeddings_generation import generate_text_embeddings, generate_image_embeddings
+
+load_dotenv()
 
 # Pinecone Constants
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")

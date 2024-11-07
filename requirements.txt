@@ -5,3 +5,4 @@ pinecone-client
 requests
 urllib3
 gradio
+streamlit

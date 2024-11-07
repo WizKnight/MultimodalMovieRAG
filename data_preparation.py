@@ -1,9 +1,12 @@
 import requests
 import os
+from dotenv import load_dotenv
 from typing import List, Dict
 import urllib3
 import re
 import csv
+
+load_dotenv()
 
 TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 TMDB_BASE_URL = "https://api.themoviedb.org/3"

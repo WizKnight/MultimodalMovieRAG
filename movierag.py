@@ -2,8 +2,11 @@ import gradio as gr
 import pinecone
 import tempfile
 import os
+from dotenv import load_dotenv
 
 from query_processing import query_pinecone
+
+load_dotenv()
 
 # Pinecone Constants
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")

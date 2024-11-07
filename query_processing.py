@@ -1,7 +1,10 @@
 import pinecone
 import os
+from dotenv import load_dotenv
 
 from embeddings_generation import generate_text_embeddings, generate_image_embeddings
+
+load_dotenv()
 
 # Pinecone Constants
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
