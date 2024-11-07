@@ -5,7 +5,7 @@ import urllib3
 import re
 import csv
 
-TMDB_API_KEY = "0efecc2129382b13b10723d96b774990"
+TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
