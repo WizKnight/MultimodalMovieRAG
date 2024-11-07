@@ -4,3 +4,4 @@ openai-clip
 pinecone-client
 requests
 urllib3
+gradio
