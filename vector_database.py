@@ -9,7 +9,7 @@ import pinecone
 from embeddings_generation import generate_text_embeddings, generate_image_embeddings
 
 # Pinecone Constants
-PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 
 def init_pinecone():
     """Initializes the Pinecone connection."""
@@ -107,10 +107,13 @@ if __name__ == "__main__":
         if not isinstance(text_embedding, list) or not isinstance(image_embedding, list):
             print(f"Skipping movie {movie['title']} due to invalid embedding format.")
             continue
+        
+        # Combine text and image embeddings into a single vector
+        combined_embedding = text_embedding + image_embedding
 
         upsert_data_list.append((
             movie["title"],  # Using movie title as ID
-            text_embedding + image_embedding, 
+            combined_embedding, 
             {
                 "title": movie["title"],
                 "overview": movie["overview"],
